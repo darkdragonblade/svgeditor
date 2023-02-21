@@ -46,5 +46,32 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      function IsPC() {
+        for (
+          var n = navigator.userAgent,
+            e = new Array(
+              "Android",
+              "iPhone",
+              "SymbianOS",
+              "Windows Phone",
+              "iPad",
+              "iPod"
+            ),
+            i = !0,
+            r = 0;
+          r < e.length;
+          r++
+        )
+          if (n.indexOf(e[r]) > 0) {
+            i = !1;
+            break;
+          }
+        return i;
+      }
+      IsPC() ||
+        (alert("Please open it in the computer "),
+        (document.body.innerHTML = ""));
+    </script>
   </body>
 </html>
