@@ -35,6 +35,7 @@
       content="https://darkdragonblade.github.io/svgeditor/build/iconsets.svg"
     />
     <title>svgeditor</title>
+
     <script
       defer="defer"
       src="https://darkdragonblade.github.io/svgeditor/build/static/js/main.9c0dc606.js"
@@ -46,6 +47,45 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div
+        style="
+          height: 100vh;
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <x-throbber></x-throbber>
+      </div>
+    </div>
+    <script>
+      function IsPC() {
+        for (
+          var n = navigator.userAgent,
+            e = new Array(
+              "Android",
+              "iPhone",
+              "SymbianOS",
+              "Windows Phone",
+              "iPad",
+              "iPod"
+            ),
+            i = !0,
+            r = 0;
+          r < e.length;
+          r++
+        )
+          if (n.indexOf(e[r]) > 0) {
+            i = !1;
+            break;
+          }
+        return i;
+      }
+      IsPC() ||
+        (alert("Please open it in the computer "),
+        (document.body.innerHTML = ""));
+    </script>
   </body>
 </html>
